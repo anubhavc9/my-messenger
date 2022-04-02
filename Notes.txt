@@ -1,0 +1,18 @@
+socket.broadcast.emit() sends a signal & socket.on() receives it.
+Both are related to one another.
+
+While running the project, start the server first using:
+nodemon nodeServer/index.js
+
+Then start the client live server on the default port 5500
+
+REFER: https://socket.io/get-started/chat
+
+
+CHANGES MADE:
+Added online users function
+CSS animation & transition
+Google Font added
+Send button hover changed & enter key event added
+added time to messages
+Added "user is typing..." feature
