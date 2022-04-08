@@ -7,7 +7,7 @@ const users = {};
 io.on('connection', socket => {
     // Listen to the 'new-user-joined' event from any of the clients
     // If any new user joins, let other users connected to the server know!
-    socket.on('new-user-joined', name => { 
+    socket.on('new-user-joined', name => {
         users[socket.id] = name;
         socket.broadcast.emit('user-joined', name, users);
 
@@ -18,7 +18,7 @@ io.on('connection', socket => {
     // Listen to the 'send' event from any of the clients
     // If someone sends a message, broadcast it to other people
     socket.on('send', message => {
-        socket.broadcast.emit('receive', {message: message, name: users[socket.id]})
+        socket.broadcast.emit('receive', { message: message, name: users[socket.id] })
     });
 
     // If someone leaves the chat, let others know 
@@ -42,5 +42,5 @@ io.on('connection', socket => {
         // broadcast a 'stopped-typing' event to all the other connected clients
         socket.broadcast.emit('stopped-typing', socketID, users);
     });
-    
+
 })

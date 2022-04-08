@@ -1,193 +1,206 @@
 body {
-  height: 100vh;
-  background-image: linear-gradient(rgb(255, 255, 255), rgb(15, 214, 48));
-  font-family: 'Oxygen', sans-serif;
+    height: 100vh;
+    font-family: 'Oxygen', sans-serif;
+    box-sizing: border-box;
 }
 
-.logo {
-  display: block;
-  margin: auto;
-  width: 50px;
-  height: 50px;
+#heading {
+    text-align: center;
+    font-size: 45px;
+    letter-spacing: 3px;
+    margin-top: 10px;
 }
 
-h1 {
-  margin-top: 12px;
-  font-size: 37px;
-  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  text-align: center;
+#outer-container {
+    display: flex;
+    height: 85vh;
 }
 
-.container {
-  width: 1100px;
-  border: 2px solid black;
-  border-radius: 15px;
-  margin: auto;
-  height: 60vh;
-  padding: 33px;
-  overflow-y: auto;
-  margin-bottom: 20px;
+#main-chat {
+    border: 1px solid black;
 }
 
-.message {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: whitesmoke;
-  width: 26%;
-  padding: 10px;
-  margin: 17px 12px;
-  border: 2px solid black;
-  border-radius: 10px;
-
-  /* to add animations */
-  animation-name: anubhav;
-  animation-duration: 0.4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  /* to add hover scale transition */
-  transition-property: all;
+#msgs {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 0px 17px;
 }
 
-/* defining the animation 'anubhav' */
-@keyframes anubhav {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 26%;
-  }
+.msg {
+    margin: 15px 0px;
+    width: 60%;
 }
 
-/* defining the transition on hover */
-.message:hover {
-  transform: scale(1.2);
-  background-color: white;
+#msg-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    background-color: #eae9e9;
+    border-radius: 5px;
+    padding: 5px 15px;
+    letter-spacing: 1px;
 }
 
-.enter {
-  background-color: transparent;
-  font-size: 20px;
-  width: 26%;
-  padding: 10px;
-  margin: 17px 12px;
-  border-radius: 10px;
-  border: 3px solid green;
-  color: green;
-
-  /* to add animations */
-  animation-name: anubhav;
-  animation-duration: 0.4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  transition-property: all;
+#avatar img {
+    width: 35px;
+    border-radius: 50%;
 }
 
-/* defining the transition on hover */
-.enter:hover {
-  transform: scale(1.2);
+#time {
+    font-size: 14px;
 }
 
-.exit {
-  background-color: transparent;
-  font-size: 20px;
-  width: 26%;
-  padding: 10px;
-  margin: 17px 12px;
-  border-radius: 10px;
-  border: 3px solid red;
-  color: red;
-
-  /* to add animations */
-  animation-name: anubhav;
-  animation-duration: 0.4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  transition-property: all;
+#user-name {
+    font-weight: bold;
 }
 
-/* defining the transition on hover */
-.exit:hover {
-  transform: scale(1.2);
-}
-
-.left {
-  float: left;
-  clear: both;
+#user-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 10%;
+    text-align: center;
 }
 
 .right {
-  float: right;
-  clear: both;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
 }
 
-#send-container {
-  display: block;
-  margin: auto;
-  text-align: center;
-  max-width: 1085px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.left {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: auto;
 }
 
-#messageInp {
-  margin-left: 180px;
-  width: 80%;
-  border: 2px solid black;
-  border-radius: 6px;
-  height: 34px;
-  font-size: 22px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.online {
+    display: flex;
+    margin: 20px 5px;
 }
 
-.btn {
-  margin: 0 5px;
-  width: 9%;
-  cursor: pointer;
-  border: 2px solid black;
-  border-radius: 6px;
-  height: 34px;
-  transition-property: all;
+#online-avatar {
+    width: 20%;
+    text-align: center;
+    margin: 0px 10px;
 }
 
-.btn:hover {
-  border: 3px solid white;
-  background-color: black;
-  color: white;
+#online-avatar img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+#online-name {
+    width: 80%;
+    text-align: left;
+    align-self: center;
+}
+
+#users {
+    border: 1px solid black;
+    border-right: none;
+}
+
+#users h5 {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 3px;
+    border-bottom: 1px solid;
+    padding: 15px 0px;
+}
+
+form button {
+    padding: 0px 23px;
+    margin: auto 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5%;
+    height: 70%;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    padding: 5px 5px;
+    border-top: 1px solid black;
+}
+
+form input {
+    padding: 12px 10px;
 }
 
 .pressed {
-  border: 3px solid white;
-  background-color: black;
-  color: white;
+    border: 3px solid white;
+    background-color: black;
+    color: white;
 }
 
-.display {
-  display: flex;
-  flex-direction: row;
+.user-entered {
+    text-align: center;
+    margin: 20px 0px;
 }
 
-.chat-sidebar {
-  width: 178px;
-  height: 500px;
-  border: 2px solid black;
-  border-radius: 15px;
+.user-entered span {
+    border-radius: 25px;
+    padding: 4px 60px;
+    letter-spacing: 2px;
+    background-color: #9be46a;
+    color: white;
+    font-weight: 600;
 }
 
-h3 {
-  font-size: 27px;
-  text-align: center;
+.user-exited {
+    text-align: center;
+    margin: 20px 0px;
 }
 
-li {
-  font-size: 18px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 0px 0px;
+.user-exited span {
+    border-radius: 25px;
+    padding: 4px 60px;
+    letter-spacing: 2px;
+    background-color: #fa6262;
+    color: white;
+    font-weight: 600;
 }
 
-#usersList {
-  list-style: decimal;
+@media (max-width: 1000px) {
+    #outer-container {
+        flex-direction: column;
+    }
+    #users {
+        width: 100%;
+        border-right: 1px solid black;
+        border-bottom: none;
+    }
+    #main-chat {
+        width: 100%;
+    }
+    #online-avatar {
+        width: 44%;
+        text-align: right;
+    }
+    #online-name {
+        width: 56%;
+    }
+    #user-info {
+        width: 20%;
+    }
+    #msg-info {
+        padding: 5px 8px;
+    }
+    #time {
+        font-size: 12px;
+    }
+    .msg {
+        width: 65%;
+    }
+    #msgs {
+        padding: 10px 0px 0px 0px;
+    }
 }
