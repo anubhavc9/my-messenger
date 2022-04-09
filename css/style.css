@@ -26,6 +26,7 @@ body {
     flex-direction: column;
     overflow-y: scroll;
     padding: 0px 17px;
+    min-height: 55vh;
 }
 
 .msg {
@@ -108,19 +109,17 @@ body {
 
 #users h5 {
     text-align: center;
-    font-size: 22px;
-    letter-spacing: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
     border-bottom: 1px solid;
     padding: 15px 0px;
 }
 
 form button {
-    padding: 0px 23px;
     margin: auto 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 5%;
-    height: 70%;
+    height: 100%;
 }
 
 form {
@@ -202,5 +201,23 @@ form input {
     }
     #msgs {
         padding: 10px 0px 0px 0px;
+    }
+}
+
+@media (max-height: 550px) {
+    #msgs {
+        height: 88%;
+    }
+    form {
+        height: 12%;
+    }
+}
+
+@media (max-height: 400px) {
+    #msgs {
+        height: 85%;
+    }
+    form {
+        height: 15%;
     }
 }
