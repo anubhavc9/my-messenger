@@ -34,19 +34,16 @@ const append = (name, message, position, type = 'none') => {
         msgHtml = `
         <div class="msg ${position}">
             <div id="msg-info">
-                <div id="user-name">
-                    You
+                <div id="msg-info-inner">
+                    <div id="user-name">
+                        You
+                    </div>
+                    <div id="time">
+                        ${time}
+                    </div>
                 </div>
                 <div id="text">
                     ${message}
-                </div>
-            </div>
-            <div id="user-info">
-                <div id="avatar">
-                    <img src="img_avatar.png" alt="Avatar">
-                </div>
-                <div id="time">
-                    ${time}
                 </div>
             </div>
         </div>
@@ -55,19 +52,16 @@ const append = (name, message, position, type = 'none') => {
         msgHtml = `
         <div class="msg ${position}">
             <div id="msg-info">
-                <div id="user-name">
-                    ${name}
+                <div id="msg-info-inner">
+                    <div id="user-name">
+                        ${name}
+                    </div>
+                    <div id="time">
+                        ${time}
+                    </div>
                 </div>
                 <div id="text">
                     ${message}
-                </div>
-            </div>
-            <div id="user-info">
-                <div id="avatar">
-                    <img src="img_avatar.png" alt="Avatar">
-                </div>
-                <div id="time">
-                    ${time}
                 </div>
             </div>
         </div>
@@ -177,6 +171,9 @@ document.addEventListener('keyup', function(event) {
     }
     var key = event.key;
     if (key === 'Enter') {
+        // when enter key is pressed, blur the messageInput element
+        messageInput.blur();
+
         const btn = document.getElementsByClassName('btn')[0];
         btn.classList.add('pressed');
         setTimeout(() => {

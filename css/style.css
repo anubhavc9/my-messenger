@@ -2,6 +2,7 @@ body {
     height: 100vh;
     font-family: 'Oxygen', sans-serif;
     box-sizing: border-box;
+    background-color: #f2f2f2;
 }
 
 #heading {
@@ -21,17 +22,19 @@ body {
 }
 
 #msgs {
+    background-color: white;
     height: 90%;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    padding: 0px 17px;
+    padding: 0px 10px 0px 20px;
     min-height: 55vh;
 }
 
 .msg {
     margin: 15px 0px;
-    width: 60%;
+    width: 45%;
+    border-radius: 5px;
 }
 
 #msg-info {
@@ -39,16 +42,14 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
-    background-color: #eae9e9;
-    border-radius: 5px;
+    width: 100%;
     padding: 5px 15px;
     letter-spacing: 1px;
 }
 
-#avatar img {
-    width: 35px;
-    border-radius: 50%;
+#msg-info-inner {
+    display: flex;
+    justify-content: space-between;
 }
 
 #time {
@@ -59,22 +60,15 @@ body {
     font-weight: bold;
 }
 
-#user-info {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 10%;
-    text-align: center;
-}
-
 .right {
+    background-color: #dcf8c6;
     display: flex;
     flex-direction: row;
     margin-left: auto;
 }
 
 .left {
+    background-color: #f2f2f2;
     display: flex;
     flex-direction: row-reverse;
     margin-right: auto;
@@ -88,11 +82,11 @@ body {
 #online-avatar {
     width: 20%;
     text-align: center;
-    margin: 0px 10px;
+    margin: 0px 15px 0px 10px;
 }
 
 #online-avatar img {
-    width: 35px;
+    width: 42px;
     border-radius: 50%;
 }
 
@@ -103,8 +97,10 @@ body {
 }
 
 #users {
+    width: 21%;
     border: 1px solid black;
-    border-right: none;
+    margin-right: 40px;
+    background-color: white;
 }
 
 #users h5 {
@@ -184,11 +180,11 @@ form input {
         width: 44%;
         text-align: right;
     }
+    #online-avatar img {
+        width: 38px;
+    }
     #online-name {
         width: 56%;
-    }
-    #user-info {
-        width: 20%;
     }
     #msg-info {
         padding: 5px 8px;
@@ -197,19 +193,28 @@ form input {
         font-size: 12px;
     }
     .msg {
-        width: 65%;
+        width: 48%;
     }
     #msgs {
-        padding: 10px 0px 0px 0px;
+        padding: 10px 10px 0px 20px;
+    }
+    .online {
+        margin: 15px 5px;
     }
 }
 
 @media (max-height: 550px) {
     #msgs {
-        height: 88%;
+        height: 86%;
     }
     form {
-        height: 12%;
+        height: 14%;
+    }
+    .online {
+        margin: 10px 5px;
+    }
+    #online-avatar img {
+        width: 32px;
     }
 }
 
@@ -219,5 +224,11 @@ form input {
     }
     form {
         height: 15%;
+    }
+    .online {
+        margin: 10px 5px;
+    }
+    #online-avatar img {
+        width: 32px;
     }
 }
