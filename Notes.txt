@@ -1,4 +1,7 @@
-socket.broadcast.emit() sends a signal & socket.on() receives it. Both are related to one another & work in conjunction.
+socket.broadcast.emit() & socket.emit() are used to send a signal & socket.on() receives it. Both are related to one another & work in conjunction.
+
+The difference between broadcast.emit() & emit() is that the former sends a signal to every client except the client that initiated the event.
+emit() send a signal to all the clients, including the one that initiated the event.
 
 While running the project, start the server first:
 nodemon nodeServer/index.js
