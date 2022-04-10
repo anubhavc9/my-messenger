@@ -1,12 +1,12 @@
 const socket = io('http://localhost:8000');
 
-const form = document.getElementById('send-container');
-const messageInput = document.getElementById('messageInp');
+const msgForm = document.getElementById('msgForm');
+const messageInp = document.getElementById('messageInp');
 const msgs = document.getElementById('msgs');
 
-var audio = new Audio('new-message-alert.mp3');
+var newMessageAlert = new Audio('new-message-alert.mp3');
 
-const append = (name, message, position, type = 'none') => {
+const appendMessage = (name, message, position, type = 'none') => {
     var today = new Date();
     let hours = today.getHours();
     let minutes = today.getMinutes();
@@ -94,7 +94,7 @@ const append = (name, message, position, type = 'none') => {
     msgs.append(msgElement);
 
     if (position == 'left') {
-        audio.play();
+        newMessageAlert.play();
     }
 }
 
@@ -133,7 +133,6 @@ function outputUsers(users) {
 }
 
 var name = prompt("Enter your name to join");
-
 if (name.trim() === '') {
     while (true) {
         name = prompt("Name cannot be empty");
@@ -145,7 +144,7 @@ if (name.trim() === '') {
 socket.emit('new-user-joined', name);
 
 socket.on('user-joined', (name, users) => {
-    append(name, 'joined the chat', 'right', 'enter');
+    appendMessage(name, 'joined the chat', 'right', 'enter');
     outputUsers(users);
 });
 
@@ -158,19 +157,19 @@ socket.on('remove-disconnecting-user', users => {
 });
 
 socket.on('receive', data => {
-    append(data.name, data.message, 'left')
+    appendMessage(data.name, data.message, 'left')
 })
 
 socket.on('left', name => {
-    append(name, 'left the chat', 'right', 'exit');
+    appendMessage(name, 'left the chat', 'right', 'exit');
 });
 
-form.addEventListener('submit', (e) => {
+msgForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const message = messageInput.value;
-    append('You', message, 'right');
+    const message = messageInp.value;
+    appendMessage('You', message, 'right');
     socket.emit('send', message);
-    messageInput.value = ''
+    messageInp.value = ''
 })
 
 // highlight the send key when enter is pressed
@@ -180,8 +179,8 @@ document.addEventListener('keyup', function(event) {
     }
     var key = event.key;
     if (key === 'Enter') {
-        // when enter key is pressed, blur the messageInput element
-        messageInput.blur();
+        // when enter key is pressed, blur the messageInp element
+        messageInp.blur();
 
         const btn = document.getElementsByClassName('btn')[0];
         btn.classList.add('pressed');
@@ -191,7 +190,7 @@ document.addEventListener('keyup', function(event) {
     }
 });
 
-messageInput.addEventListener('focusin', () => {
+messageInp.addEventListener('focusin', () => {
     // console.log("User started typing...");
     socket.emit('user-typing', socket.id);
 });
@@ -200,7 +199,7 @@ socket.on('typing', (socketID, users) => {
     appendTyping(users[socketID], 'left');
 });
 
-messageInput.addEventListener('focusout', () => {
+messageInp.addEventListener('focusout', () => {
     // console.log("User ended typing");
     socket.emit('user-stopped-typing', socket.id);
 });
