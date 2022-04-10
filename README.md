@@ -12,7 +12,7 @@
 
 ### Tech Used
 * Front-end: HTML & CSS
-* Back-end: Node.js/Express.js
+* Back-end: Node.js & Socket.IO
 
 ### To run the project
 * Clone the repo in your local
