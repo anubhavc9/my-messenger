@@ -108,7 +108,7 @@ function outputUsers(users) {
             usersHtml += `
             <div class="online">
                 <div id="online-avatar">
-                    <img src="img_avatar.png" alt="Avatar">
+                    <img src="./images/${users[socketID][0].toLowerCase()}.png" alt="Avatar">
                 </div>
                 <div id="online-name">
                     ${users[socketID]} (You)
@@ -119,7 +119,7 @@ function outputUsers(users) {
             usersHtml += `
             <div class="online">
                 <div id="online-avatar">
-                    <img src="img_avatar.png" alt="Avatar">
+                    <img src="./images/${users[socketID][0].toLowerCase()}.png" alt="Avatar">
                 </div>
                 <div id="online-name">
                     ${users[socketID]}
@@ -132,7 +132,16 @@ function outputUsers(users) {
     usersList.innerHTML = usersHtml;
 }
 
-const name = prompt("Enter your name to join");
+var name = prompt("Enter your name to join");
+
+if (name.trim() === '') {
+    while (true) {
+        name = prompt("Name cannot be empty");
+        if (name.trim() != '') {
+            break;
+        }
+    }
+}
 socket.emit('new-user-joined', name);
 
 socket.on('user-joined', (name, users) => {
