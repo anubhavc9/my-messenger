@@ -37,6 +37,10 @@ body {
     border-radius: 5px;
 }
 
+#text {
+    min-height: 24px;
+}
+
 #msg-info {
     display: flex;
     flex-wrap: wrap;
