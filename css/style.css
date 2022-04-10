@@ -299,3 +299,42 @@ form input {
 #typing div:nth-child(5) {
     animation-delay: 1s;
 }
+
+
+/* small triangle on right/left side of chat bubble */
+
+.talkbubble-right {
+    position: relative;
+    padding: 5px 0px 5px 15px !important;
+    margin: 0px 20px 0px 0px;
+}
+
+.talkbubble-right:before {
+    content: "";
+    position: absolute;
+    left: 102%;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-left: 26px solid #dcf8c6;
+    border-bottom: 13px solid transparent;
+}
+
+.talkbubble-left {
+    position: relative;
+    padding: 5px 15px 5px 0px !important;
+    margin: 0px 0px 0px 20px;
+}
+
+.talkbubble-left:before {
+    content: "";
+    position: absolute;
+    right: 102%;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid #f2f2f2;
+    border-bottom: 13px solid transparent;
+}
