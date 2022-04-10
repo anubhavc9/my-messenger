@@ -207,9 +207,16 @@ const appendTyping = (name, position) => {
 
     typingElement.innerHTML = `
     <div class="msg left">
-        <div id="msg-info">
+        <div id="typing-info">
             <div id="text">
-                ${name} is typing...
+                ${name} is typing
+            </div>
+            <div id="typing">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
     </div>
