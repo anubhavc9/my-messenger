@@ -284,6 +284,9 @@ form input {
     }
 }
 
+
+/* delay animation for each <div> to get the "wave" effect */
+
 #typing div:nth-child(0) {
     animation-delay: 0s;
 }

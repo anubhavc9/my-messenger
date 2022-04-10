@@ -68,7 +68,7 @@ const appendMessage = (name, message, position, type = 'none') => {
         `;
     }
 
-
+    // new user joined the chat
     if (type === 'enter') {
         msgHtml = `
         <div class="user-entered">
@@ -79,6 +79,7 @@ const appendMessage = (name, message, position, type = 'none') => {
         `;
     }
 
+    // user left the chat
     if (type === 'exit') {
         msgHtml = `
         <div class="user-exited">
@@ -98,7 +99,8 @@ const appendMessage = (name, message, position, type = 'none') => {
     }
 }
 
-function outputUsers(users) {
+// a utility function that populates the list of online users
+function outputOnlineUsers(users) {
     let usersList = document.getElementById('usersList');
 
     let usersHtml = ``;
@@ -135,7 +137,7 @@ function outputUsers(users) {
 var name = prompt("Enter your name to join");
 if (name.trim() === '') {
     while (true) {
-        name = prompt("Name cannot be empty");
+        name = prompt("Name cannot be empty!");
         if (name.trim() != '') {
             break;
         }
@@ -145,15 +147,15 @@ socket.emit('new-user-joined', name);
 
 socket.on('user-joined', (name, users) => {
     appendMessage(name, 'joined the chat', 'right', 'enter');
-    outputUsers(users);
+    outputOnlineUsers(users);
 });
 
 socket.on('add-new-user', users => {
-    outputUsers(users);
+    outputOnlineUsers(users);
 });
 
 socket.on('remove-disconnecting-user', users => {
-    outputUsers(users);
+    outputOnlineUsers(users);
 });
 
 socket.on('receive', data => {
@@ -210,6 +212,7 @@ socket.on('stopped-typing', (socketID, users) => {
 
 let typingElement;
 
+// a utility function that will add "User is typing..." to the screen temporarily
 const appendTyping = (name, position) => {
     typingElement = document.createElement('div');
 
