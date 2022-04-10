@@ -198,6 +198,10 @@ form input {
     }
     #msgs {
         padding: 10px 10px 0px 20px;
+        height: 88%;
+    }
+    #send-container {
+        height: 12%;
     }
     .online {
         margin: 15px 5px;
@@ -337,4 +341,25 @@ form input {
     border-top: 13px solid transparent;
     border-right: 26px solid #f2f2f2;
     border-bottom: 13px solid transparent;
+}
+
+
+/* icon inside send button */
+
+button[type='submit'] {
+    border-radius: 50%;
+    background-color: #2ebe8b;
+    border-color: #2ebe8b;
+    opacity: 0.8;
+    color: white;
+}
+
+button[type='submit']:hover {
+    background-color: #2ebe8b;
+    border-color: #2ebe8b;
+    opacity: 1;
+}
+
+button svg {
+    margin: auto;
 }
