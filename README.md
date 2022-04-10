@@ -16,5 +16,6 @@
 
 ### To run the project
 * Clone the repo in your local
-* Start the node server using: nodemon nodeServer\index.js
+* Navigate to `nodeServer` directory & run `npm install` 
+* Start the node server using: `nodemon nodeServer\index.js`
 * Start the client live server on the default port 5500
