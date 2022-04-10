@@ -144,7 +144,7 @@ form input {
 
 .user-entered span {
     border-radius: 25px;
-    padding: 4px 60px;
+    padding: 2px 60px;
     letter-spacing: 2px;
     background-color: #9be46a;
     color: white;
@@ -158,7 +158,7 @@ form input {
 
 .user-exited span {
     border-radius: 25px;
-    padding: 4px 60px;
+    padding: 2px 60px;
     letter-spacing: 2px;
     background-color: #fa6262;
     color: white;

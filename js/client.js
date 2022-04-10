@@ -212,11 +212,6 @@ const appendTyping = (name, position) => {
                 ${name} is typing...
             </div>
         </div>
-        <div id="user-info">
-            <div id="avatar">
-                <img src="img_avatar2.png" alt="Avatar">
-            </div>
-        </div>
     </div>
     `;
 
