@@ -4,7 +4,7 @@ const form = document.getElementById('send-container');
 const messageInput = document.getElementById('messageInp');
 const msgs = document.getElementById('msgs');
 
-var audio = new Audio('ting.mp3');
+var audio = new Audio('new-message-alert.mp3');
 
 const append = (name, message, position, type = 'none') => {
     var today = new Date();
