@@ -25,7 +25,7 @@
 * Open the `index.html` file with a live server
 
 
-### DEPLOYMENT STEPS
+# DEPLOYMENT STEPS
 ## Backend - nodeServer
 1. Create a new project on Heroku (my-messenger-backend)
 2. Open a terminal in the **nodeServer** folder
@@ -43,3 +43,14 @@
 1. In **client/client.js** - change the URL from localhost:8000 to backend server URL
 2. In **client/index.html** - make the same change
 3. Login to Netlify & simply upload the **client** folder. This will automatically trigger the build & deploy your frontend.
+
+<br>
+## To re-deploy after making changes
+## Backend - nodeServer
+1. Navigate to `nodeServer` directory
+2. `git add .`
+3. `git commmit -am "commit message"`
+4. `git push heroku master`
+
+## Frontend - client
+1. Just make a new project on Netlify & manually upload the client folder. (Continuous Deployment is not active for this because we don't want to link the entire GitHub repo to Netlify. Only the client folder inside the repo.)
