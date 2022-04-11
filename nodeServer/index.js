@@ -1,14 +1,4 @@
-const PORT = process.env.PORT || 8000;
-
-const express = require('express')
-const http = require('http');
-const socketio = require('socket.io');
-const cors = require('cors');
-
-const app = express();
-const server = http.createServer(app);
-const io = socketio(server);
-app.use(cors())
+const io = require('socket.io')(8000)
 
 const users = {};
 
@@ -43,7 +33,3 @@ io.on('connection', socket => {
     });
 
 })
-
-server.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
