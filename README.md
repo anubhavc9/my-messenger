@@ -1,7 +1,7 @@
-# [my-messenger](https://6253df6a0e435b27cd19a5b4--glistening-rabanadas-8ee2b7.netlify.app/)
+# [my-messenger](https://joyful-hotteok-a3957a.netlify.app/)
 
 ## A Node/Express real-time group chat application using Socket.IO
-## Application Deployment Link - https://6253df6a0e435b27cd19a5b4--glistening-rabanadas-8ee2b7.netlify.app/
+## Application Deployment Link - https://joyful-hotteok-a3957a.netlify.app/
 
 ## Backend Server Deployment - https://my-messenger-backend.herokuapp.com/
 ### Provides features such as:
