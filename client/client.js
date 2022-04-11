@@ -139,10 +139,10 @@ function outputOnlineUsers(users) {
 }
 
 var name = prompt("Enter your name to join");
-if (name.trim() === '') {
+if (name.trim() === '' || name === 'null') {
     while (true) {
         name = prompt("Name cannot be empty!");
-        if (name.trim() != '') {
+        if (name.trim() != '' && name != 'null') {
             break;
         }
     }
