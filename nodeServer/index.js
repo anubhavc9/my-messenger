@@ -1,4 +1,14 @@
-const io = require('socket.io')(8000)
+const PORT = process.env.PORT || 8000
+
+const express = require('express')
+const http = require('http')
+const socketio = require('socket.io')
+const cors = require('cors')
+
+const app = express()
+const server = http.createServer(app)
+const io = socketio(server)
+app.use(cors())
 
 const users = {};
 
@@ -32,4 +42,12 @@ io.on('connection', socket => {
         socket.broadcast.emit('stopped-typing', socketID, users);
     });
 
+})
+
+app.get('/', (req, res) => {
+    res.status(200).send('Backend server is up & runnning')
+})
+
+server.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
 })

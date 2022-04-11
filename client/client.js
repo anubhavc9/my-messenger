@@ -1,4 +1,8 @@
-const socket = io('http://localhost:8000');
+// for production environment
+const socket = io('https://my-messenger-backend.herokuapp.com/');
+
+// for local (dev) environment
+// const socket = io('http://localhost:8000');
 
 const msgForm = document.getElementById('msgForm');
 const messageInp = document.getElementById('messageInp');
