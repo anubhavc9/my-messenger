@@ -3,22 +3,18 @@ socket.broadcast.emit() & socket.emit() are used to send a signal & socket.on() 
 The difference between broadcast.emit() & emit() is that the former sends a signal to every client except the client that initiated the event.
 emit() send a signal to all the clients, including the one that initiated the event.
 
-While running the project, start the server first:
-nodemon nodeServer/index.js
-
-Then start the client live server on the default port 5500
-
 REFER: https://socket.io/get-started/chat
 
+
+Following is for my personal reference. Please ignore :)
 
 Improvements to be considered in the future
 -------------------------------------------
 
-1. Deploy the project
-2. Check if a user is already present in the users list
-3. On-screen keyboard
-4. Emojis support
-5. Add private messaging
+1. Check if a user is already present in the users list
+2. On-screen keyboard
+3. Emojis support
+4. Add private messaging
 
 
 CHANGES MADE:
@@ -29,4 +25,8 @@ CHANGES MADE:
 3. Google Font added
 4. Send button hover changed & enter key event added
 5. Added timestamp to messages
-6. Added "User is typing..." feature
+6. Added "User is typing..." feature with animation
+7. Added new message alert
+8. Added Media Queries for responsiveness
+9. Added avatars for list of online users
+10. Deployed on Netlify & Heroku
