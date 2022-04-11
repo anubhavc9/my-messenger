@@ -16,11 +16,13 @@
 * Front-end: HTML & CSS
 * Back-end: Node.js & Socket.IO
 
-### To run the project (!!!UPDATE THIS!!!)
-* Clone the repo in your local
+### To run the project on your local
+* Clone the repo
 * Navigate to `nodeServer` directory & run `npm install` 
 * Start the node server using: `nodemon nodeServer\index.js`
-* Start the client live server on the default port 5500
+* Navigate to `client` directory
+* In *index.html & client.js* switch from prod env to dev env by uncommenting the specific lines
+* Open the `index.html` file with a live server
 
 
 ### DEPLOYMENT STEPS
