@@ -1,7 +1,7 @@
-# [my-messenger](https://joyful-hotteok-a3957a.netlify.app/)
+# [my-messenger](https://anubhav-my-messenger.netlify.app/)
 
 ## A Node/Express real-time group chat application using Socket.IO
-## Application Deployment Link - https://joyful-hotteok-a3957a.netlify.app/
+## Application Deployment Link - https://anubhav-my-messenger.netlify.app/
 
 ## Backend Server Deployment - https://my-messenger-backend.herokuapp.com/
 ### Provides features such as:
